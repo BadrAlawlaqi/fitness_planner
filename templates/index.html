@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Fitness & Nutrition Planner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🏋️‍♂️ AI Fitness & Meal Planner</h1>
+        <p style="text-align: center; margin-bottom: 25px; color: #666;">Enter your details to generate a custom fitness and meal plan tailored by AI</p>
+        
+        <form action="/generate" method="POST">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required placeholder="e.g. Alex">
+            </div>
+
+            <div style="display: flex; gap: 15px;">
+                <div class="form-group" style="flex: 1;">
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" required placeholder="22">
+                </div>
+                <div class="form-group" style="flex: 1;">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 15px;">
+                <div class="form-group" style="flex: 1;">
+                    <label for="height">Height (cm):</label>
+                    <input type="number" id="height" name="height" required placeholder="175">
+                </div>
+                <div class="form-group" style="flex: 1;">
+                    <label for="weight">Weight (kg):</label>
+                    <input type="number" id="weight" name="weight" required placeholder="70">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="goal">Fitness Goal:</label>
+                <select id="goal" name="goal" required>
+                    <option value="Weight Loss & Fat Burning">Weight Loss & Fat Burning</option>
+                    <option value="Muscle Gain & Bulking">Muscle Gain & Bulking</option>
+                    <option value="Maintenance & General Fitness">Maintenance & General Fitness</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="available_ingredients">Available Kitchen Ingredients:</label>
+                <textarea id="available_ingredients" name="available_ingredients" rows="3" placeholder="e.g. Eggs, Chicken breast, Rice, Oats, Milk, Broccoli..."></textarea>
+            </div>
+
+            <button type="submit">✨ Generate Smart Plan</button>
+        </form>
+    </div>
+</body>
+</html>

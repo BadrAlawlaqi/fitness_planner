@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Personal Plan</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Personalized Plan for {{ plan.name }}</h1>
+        <p style="text-align: center; margin-bottom: 20px; color: #555;">Target Goal: <strong>{{ plan.goal }}</strong></p>
+
+        <div class="calories-box">
+            🔥 Daily Calorie Target: {{ plan.calories }} kcal
+        </div>
+
+        <div class="card">
+            <h3>🥗 Daily Meal Plan</h3>
+            <p style="white-space: pre-line; line-height: 1.8;">{{ plan.meal_plan }}</p>
+        </div>
+
+        <div class="card">
+            <h3>💪 Daily Workout Plan</h3>
+            <p style="white-space: pre-line; line-height: 1.8;">{{ plan.workout_plan }}</p>
+        </div>
+
+        <div style="text-align: center;">
+            <a href="/" class="btn-back">🔄 Create New Plan</a>
+        </div>
+    </div>
+</body>
+</html>
